@@ -1,0 +1,29 @@
+ALGORITHM algorithm_name
+VAR
+    phrase : STRING;
+    n_caractere : INTEGER :=0;
+    n_mots : INTEGER :=0;
+    n_voyelles : INTEGER :=0; 
+BEGIN
+    write("Entrez votre phrase");
+    read(phrase);
+    FOR i FROM 0 TO phrase.lenght-1 STEP step  DO
+        IF ((phrase[i]<> " ")and(phrase[i]<> ".")) THEN
+            n_caractere :=n_caractere+1 ;
+        END_IF
+
+        IF ((phrase[i]= " ")and(n_caractere <> 0)or(phrase[i]= ".")and(n_caractere <> 0)) THEN
+            n_mots:=n_mots+1;
+        END_IF
+
+        IF (phrase[i] = 'a' or 'i' or 'o' or 'e' or 'u' or 'y') THEN
+            n_voyelles:=n_voyelles+1;
+        END_IF
+        
+    END_FOR
+
+    write(n_caractere)
+    write(n_mots)
+    write(n_voyelles)
+
+END 
